@@ -1,0 +1,1022 @@
+#! /usr/local/Nuke9.0v4/libnuke-9.0.4.so -nx
+#write_info Write1 file:"/media/pa/ssd/proj/stich/IMG/wrap_cam_%02d.png" format:"4860 6480 1" chans:":rgba.red:rgba.green:rgba.blue:rgba.alpha:" framerange:"1 12" fps:"0" colorspace:"default (sRGB)" datatype:"8 bit" transfer:"unknown" views:"main"
+version 9.0 v4
+define_window_layout_xml {<?xml version="1.0" encoding="UTF-8"?>
+<layout version="1.0">
+    <window x="0" y="27" w="1920" h="1053" maximized="1" screen="0">
+        <splitter orientation="1">
+            <split size="40"/>
+            <dock id="" hideTitles="1" activePageId="Toolbar.1">
+                <page id="Toolbar.1"/>
+            </dock>
+            <split size="1361" stretch="1"/>
+            <splitter orientation="2">
+                <split size="586"/>
+                <dock id="" activePageId="Viewer.1">
+                    <page id="Viewer.1"/>
+                </dock>
+                <split size="408"/>
+                <dock id="" activePageId="DAG.1" focus="true">
+                    <page id="DAG.1"/>
+                    <page id="Curve Editor.1"/>
+                    <page id="DopeSheet.1"/>
+                </dock>
+            </splitter>
+            <split size="511"/>
+            <splitter orientation="2">
+                <split size="879"/>
+                <dock id="" activePageId="Properties.1">
+                    <page id="Properties.1"/>
+                </dock>
+                <split size="115"/>
+                <dock id="" activePageId="Progress.1">
+                    <page id="Progress.1"/>
+                </dock>
+            </splitter>
+        </splitter>
+    </window>
+</layout>
+}
+Root {
+ inputs 0
+ name /media/pa/ssd/proj/stich/sklad_v01.nk
+ project_directory "\[python \{nuke.script_directory()\}]"
+ last_frame 12
+ fps 25
+ format "2048 1556 0 0 2048 1556 1 2K_Super_35(full-ap)"
+ proxy_type scale
+ proxy_format "1024 778 0 0 1024 778 1 1K_Super_35(full-ap)"
+}
+CheckerBoard2 {
+ inputs 0
+ name CheckerBoard1
+ xpos -918
+ ypos -728
+}
+Camera2 {
+ inputs 0
+ projection_mode spherical
+ name Camera13
+ xpos 1562
+ ypos 508
+}
+Axis2 {
+ inputs 0
+ name Axis1
+ xpos -889
+ ypos -356
+}
+Camera2 {
+ translate {0 0 {parent.Root.pos}}
+ focal {{parent.Root.foc_len}}
+ haperture {{parent.Root.hot_aper}}
+ vaperture {{parent.Root.ver_aper}}
+ near {{parent.Root.near}}
+ far {{parent.Root.far}}
+ name Camera1
+ xpos -889
+ ypos -290
+}
+Read {
+ inputs 0
+ file IMG/wrap_cam_01.png
+ format "4860 6480 0 0 4860 6480 1 "
+ origset true
+ version 1
+ name Read13
+ xpos -799
+ ypos -510
+}
+Dot {
+ name Dot1
+ xpos -765
+ ypos -426
+}
+Project3D2 {
+ inputs 2
+ name Project3D1
+ xpos -799
+ ypos -270
+}
+Dot {
+ name Dot13
+ xpos -765
+ ypos -146
+}
+Axis2 {
+ inputs 0
+ rotate {0 60 0}
+ name Axis3
+ xpos -422
+ ypos -358
+}
+Camera2 {
+ translate {0 0 {parent.Root.pos}}
+ focal {{parent.Root.foc_len}}
+ haperture {{parent.Root.hot_aper}}
+ vaperture {{parent.Root.ver_aper}}
+ near {{parent.Root.near}}
+ far {{parent.Root.far}}
+ name Camera3
+ xpos -422
+ ypos -292
+}
+Read {
+ inputs 0
+ file IMG/wrap_cam_03.png
+ format "1944 2592 0 0 1944 2592 1 "
+ origset true
+ version 2
+ name Read15
+ xpos -331
+ ypos -512
+}
+Dot {
+ name Dot3
+ xpos -297
+ ypos -428
+}
+Project3D2 {
+ inputs 2
+ name Project3D3
+ xpos -331
+ ypos -272
+}
+MergeMat {
+ inputs 2
+ name MergeMat2
+ xpos -331
+ ypos -150
+}
+Axis2 {
+ inputs 0
+ rotate {0 120 0}
+ name Axis5
+ xpos 27
+ ypos -358
+}
+Camera2 {
+ translate {0 0 {parent.Root.pos}}
+ focal {{parent.Root.foc_len}}
+ haperture {{parent.Root.hot_aper}}
+ vaperture {{parent.Root.ver_aper}}
+ near {{parent.Root.near}}
+ far {{parent.Root.far}}
+ name Camera5
+ xpos 27
+ ypos -292
+}
+Read {
+ inputs 0
+ file IMG/wrap_cam_05.png
+ format "1944 2592 0 0 1944 2592 1 "
+ origset true
+ version 3
+ name Read17
+ xpos 119
+ ypos -512
+}
+Dot {
+ name Dot5
+ xpos 153
+ ypos -428
+}
+Project3D2 {
+ inputs 2
+ name Project3D5
+ xpos 119
+ ypos -272
+}
+MergeMat {
+ inputs 2
+ name MergeMat4
+ xpos 119
+ ypos -150
+}
+Axis2 {
+ inputs 0
+ rotate {0 180 0}
+ name Axis7
+ xpos 496
+ ypos -358
+}
+Camera2 {
+ translate {0 0 {parent.Root.pos}}
+ focal {{parent.Root.foc_len}}
+ haperture {{parent.Root.hot_aper}}
+ vaperture {{parent.Root.ver_aper}}
+ near {{parent.Root.near}}
+ far {{parent.Root.far}}
+ name Camera7
+ xpos 496
+ ypos -292
+}
+Read {
+ inputs 0
+ file IMG/wrap_cam_07.png
+ format "1944 2592 0 0 1944 2592 1 "
+ origset true
+ version 5
+ name Read19
+ xpos 589
+ ypos -512
+}
+Dot {
+ name Dot7
+ xpos 623
+ ypos -428
+}
+Project3D2 {
+ inputs 2
+ name Project3D7
+ xpos 589
+ ypos -272
+}
+MergeMat {
+ inputs 2
+ name MergeMat6
+ xpos 589
+ ypos -150
+}
+Axis2 {
+ inputs 0
+ rotate {0 240 0}
+ name Axis9
+ xpos 960
+ ypos -358
+}
+Camera2 {
+ translate {0 0 {parent.Root.pos}}
+ focal {{parent.Root.foc_len}}
+ haperture {{parent.Root.hot_aper}}
+ vaperture {{parent.Root.ver_aper}}
+ near {{parent.Root.near}}
+ far {{parent.Root.far}}
+ name Camera9
+ xpos 960
+ ypos -292
+}
+Read {
+ inputs 0
+ file IMG/wrap_cam_09.png
+ format "1944 2592 0 0 1944 2592 1 "
+ origset true
+ version 2
+ name Read21
+ xpos 1051
+ ypos -512
+}
+Dot {
+ name Dot9
+ xpos 1085
+ ypos -428
+}
+Project3D2 {
+ inputs 2
+ name Project3D9
+ xpos 1051
+ ypos -272
+}
+MergeMat {
+ inputs 2
+ name MergeMat8
+ xpos 1051
+ ypos -150
+}
+Axis2 {
+ inputs 0
+ rotate {0 300 0}
+ name Axis11
+ xpos 1448
+ ypos -358
+}
+Camera2 {
+ translate {0 0 {parent.Root.pos}}
+ focal {{parent.Root.foc_len}}
+ haperture {{parent.Root.hot_aper}}
+ vaperture {{parent.Root.ver_aper}}
+ near {{parent.Root.near}}
+ far {{parent.Root.far}}
+ name Camera11
+ xpos 1448
+ ypos -292
+}
+Read {
+ inputs 0
+ file IMG/wrap_cam_11.png
+ format "1944 2592 0 0 1944 2592 1 "
+ origset true
+ version 5
+ name Read23
+ xpos 1540
+ ypos -512
+}
+Dot {
+ name Dot11
+ xpos 1574
+ ypos -428
+}
+Project3D2 {
+ inputs 2
+ name Project3D11
+ xpos 1540
+ ypos -272
+}
+MergeMat {
+ inputs 2
+ name MergeMat10
+ xpos 1540
+ ypos -150
+}
+Reformat {
+ inputs 0
+ name Reformat2
+ xpos 1650
+ ypos 98
+}
+set N8064e30 [stack 0]
+Switch {
+ inputs 2
+ which {{parent.Root.grupa_a}}
+ name Switch1
+ tile_color 0xff00bfff
+ xpos 1540
+ ypos 98
+}
+Dot {
+ name Dot15
+ xpos 1574
+ ypos 215
+}
+Axis2 {
+ inputs 0
+ rotate {0 30 0}
+ name Axis2
+ xpos -646
+ ypos -358
+}
+Camera2 {
+ translate {0 0 {parent.Root.pos}}
+ focal {{parent.Root.foc_len}}
+ haperture {{parent.Root.hot_aper}}
+ vaperture {{parent.Root.ver_aper}}
+ near {{parent.Root.near}}
+ far {{parent.Root.far}}
+ name Camera2
+ xpos -646
+ ypos -292
+}
+Read {
+ inputs 0
+ file IMG/wrap_cam_02.png
+ format "1944 2592 0 0 1944 2592 1 "
+ origset true
+ version 2
+ name Read14
+ xpos -554
+ ypos -512
+}
+Dot {
+ name Dot2
+ xpos -520
+ ypos -428
+}
+Project3D2 {
+ inputs 2
+ name Project3D2
+ xpos -554
+ ypos -272
+}
+Dot {
+ name Dot14
+ xpos -520
+ ypos -16
+}
+Axis2 {
+ inputs 0
+ rotate {0 90 0}
+ name Axis4
+ xpos -192
+ ypos -358
+}
+Camera2 {
+ translate {0 0 {parent.Root.pos}}
+ focal {{parent.Root.foc_len}}
+ haperture {{parent.Root.hot_aper}}
+ vaperture {{parent.Root.ver_aper}}
+ near {{parent.Root.near}}
+ far {{parent.Root.far}}
+ name Camera4
+ xpos -192
+ ypos -292
+}
+Read {
+ inputs 0
+ file IMG/wrap_cam_04.png
+ format "1944 2592 0 0 1944 2592 1 "
+ origset true
+ version 1
+ name Read16
+ xpos -101
+ ypos -512
+}
+Dot {
+ name Dot4
+ xpos -67
+ ypos -428
+}
+Project3D2 {
+ inputs 2
+ name Project3D4
+ xpos -101
+ ypos -272
+}
+MergeMat {
+ inputs 2
+ name MergeMat3
+ xpos -101
+ ypos -20
+}
+Axis2 {
+ inputs 0
+ rotate {0 150 0}
+ name Axis6
+ xpos 272
+ ypos -358
+}
+Camera2 {
+ translate {0 0 {parent.Root.pos}}
+ focal {{parent.Root.foc_len}}
+ haperture {{parent.Root.hot_aper}}
+ vaperture {{parent.Root.ver_aper}}
+ near {{parent.Root.near}}
+ far {{parent.Root.far}}
+ name Camera6
+ xpos 272
+ ypos -292
+}
+Read {
+ inputs 0
+ file IMG/wrap_cam_06.png
+ format "1944 2592 0 0 1944 2592 1 "
+ origset true
+ version 2
+ name Read18
+ xpos 365
+ ypos -512
+}
+Dot {
+ name Dot6
+ xpos 399
+ ypos -428
+}
+Project3D2 {
+ inputs 2
+ name Project3D6
+ xpos 365
+ ypos -272
+}
+MergeMat {
+ inputs 2
+ name MergeMat5
+ xpos 365
+ ypos -20
+}
+Axis2 {
+ inputs 0
+ rotate {0 210 0}
+ name Axis8
+ xpos 716
+ ypos -358
+}
+Camera2 {
+ translate {0 0 {parent.Root.pos}}
+ focal {{parent.Root.foc_len}}
+ haperture {{parent.Root.hot_aper}}
+ vaperture {{parent.Root.ver_aper}}
+ near {{parent.Root.near}}
+ far {{parent.Root.far}}
+ name Camera8
+ xpos 716
+ ypos -292
+}
+Read {
+ inputs 0
+ file IMG/wrap_cam_08.png
+ format "1944 2592 0 0 1944 2592 1 "
+ origset true
+ name Read20
+ xpos 809
+ ypos -512
+}
+Dot {
+ name Dot8
+ xpos 843
+ ypos -428
+}
+Project3D2 {
+ inputs 2
+ name Project3D8
+ xpos 809
+ ypos -272
+}
+MergeMat {
+ inputs 2
+ name MergeMat7
+ xpos 809
+ ypos -20
+}
+Axis2 {
+ inputs 0
+ rotate {0 270 0}
+ name Axis10
+ xpos 1203
+ ypos -358
+}
+Camera2 {
+ translate {0 0 {parent.Root.pos}}
+ focal {{parent.Root.foc_len}}
+ haperture {{parent.Root.hot_aper}}
+ vaperture {{parent.Root.ver_aper}}
+ near {{parent.Root.near}}
+ far {{parent.Root.far}}
+ name Camera10
+ xpos 1203
+ ypos -292
+}
+Read {
+ inputs 0
+ file IMG/wrap_cam_10.png
+ format "1944 2592 0 0 1944 2592 1 "
+ origset true
+ version 3
+ name Read22
+ xpos 1296
+ ypos -512
+}
+Dot {
+ name Dot10
+ xpos 1330
+ ypos -428
+}
+Project3D2 {
+ inputs 2
+ name Project3D10
+ xpos 1296
+ ypos -272
+}
+MergeMat {
+ inputs 2
+ name MergeMat9
+ xpos 1296
+ ypos -20
+}
+Axis2 {
+ inputs 0
+ rotate {0 330 0}
+ name Axis12
+ xpos 1680
+ ypos -358
+}
+Camera2 {
+ translate {0 0 {parent.Root.pos}}
+ focal {{parent.Root.foc_len}}
+ haperture {{parent.Root.hot_aper}}
+ vaperture {{parent.Root.ver_aper}}
+ near {{parent.Root.near}}
+ far {{parent.Root.far}}
+ name Camera12
+ xpos 1680
+ ypos -292
+}
+Read {
+ inputs 0
+ file IMG/wrap_cam_12.png
+ format "4860 6480 0 0 4860 6480 1 "
+ origset true
+ version 6
+ name Read24
+ xpos 1772
+ ypos -512
+}
+set N66b0590 [stack 0]
+Dot {
+ name Dot12
+ xpos 1806
+ ypos -428
+}
+Project3D2 {
+ inputs 2
+ name Project3D12
+ xpos 1772
+ ypos -272
+}
+MergeMat {
+ inputs 2
+ name MergeMat11
+ xpos 1772
+ ypos -20
+}
+push $N8064e30
+Switch {
+ inputs 2
+ which {{parent.Root.grupa_b}}
+ name Switch2
+ tile_color 0xff00bfff
+ xpos 1772
+ ypos 98
+}
+MergeMat {
+ inputs 2
+ name MergeMat1
+ xpos 1772
+ ypos 211
+}
+Sphere {
+ selectable false
+ radius 100
+ name Sphere1
+ xpos 1772
+ ypos 322
+}
+Scene {
+ name Scene2
+ xpos 1782
+ ypos 446
+}
+Reformat {
+ inputs 0
+ format "800 400 0 0 800 400 1 800x400"
+ name Reformat1
+ xpos 1919
+ ypos 580
+}
+ScanlineRender {
+ inputs 3
+ conservative_shader_sampling false
+ projection_mode uv
+ motion_vectors_type distance
+ name ScanlineRender1
+ xpos 1772
+ ypos 586
+}
+SphericalTransform {
+ input "Lat Long map"
+ output Cube
+ out_ry -144
+ fix true
+ name SphericalTransform1
+ xpos 1772
+ ypos 693
+}
+Read {
+ inputs 0
+ file /media/pa/ssd/proj/stich/IMG/151207_cam11.jpg
+ format "1944 2592 0 0 1944 2592 1 "
+ origset true
+ name Read11
+ xpos 3963
+ ypos -1032
+}
+Read {
+ inputs 0
+ file /media/pa/ssd/proj/stich/IMG/151207_cam10.jpg
+ format "1944 2592 0 0 1944 2592 1 "
+ origset true
+ name Read10
+ xpos 3853
+ ypos -1032
+}
+Read {
+ inputs 0
+ file /media/pa/ssd/proj/stich/IMG/151207_cam09.jpg
+ format "1944 2592 0 0 1944 2592 1 "
+ origset true
+ name Read9
+ xpos 3743
+ ypos -1032
+}
+Read {
+ inputs 0
+ file /media/pa/ssd/proj/stich/IMG/151207_cam08.jpg
+ format "1944 2592 0 0 1944 2592 1 "
+ origset true
+ name Read8
+ xpos 3633
+ ypos -1032
+}
+Read {
+ inputs 0
+ file /media/pa/ssd/proj/stich/IMG/151207_cam07.jpg
+ format "1944 2592 0 0 1944 2592 1 "
+ origset true
+ name Read7
+ xpos 3523
+ ypos -1032
+}
+Read {
+ inputs 0
+ file /media/pa/ssd/proj/stich/IMG/151207_cam06.jpg
+ format "1944 2592 0 0 1944 2592 1 "
+ origset true
+ name Read6
+ xpos 3413
+ ypos -1032
+}
+Read {
+ inputs 0
+ file /media/pa/ssd/proj/stich/IMG/151207_cam05.jpg
+ format "1944 2592 0 0 1944 2592 1 "
+ origset true
+ name Read5
+ xpos 3303
+ ypos -1032
+}
+Read {
+ inputs 0
+ file /media/pa/ssd/proj/stich/IMG/151207_cam04.jpg
+ format "1944 2592 0 0 1944 2592 1 "
+ origset true
+ name Read4
+ xpos 3193
+ ypos -1032
+}
+Read {
+ inputs 0
+ file /media/pa/ssd/proj/stich/IMG/151207_cam03.jpg
+ format "1944 2592 0 0 1944 2592 1 "
+ origset true
+ name Read3
+ xpos 3083
+ ypos -1032
+}
+Read {
+ inputs 0
+ file /media/pa/ssd/proj/stich/IMG/151207_cam02.jpg
+ format "1944 2592 0 0 1944 2592 1 "
+ origset true
+ name Read2
+ xpos 2973
+ ypos -1032
+}
+Read {
+ inputs 0
+ file /media/pa/ssd/proj/stich/IMG/151207_cam01.jpg
+ format "1944 2592 0 0 1944 2592 1 "
+ origset true
+ name Read1
+ xpos 2863
+ ypos -1032
+}
+Read {
+ inputs 0
+ file /media/pa/ssd/proj/stich/IMG/151207_cam12.jpg
+ format "1944 2592 0 0 1944 2592 1 "
+ origset true
+ name Read12
+ xpos 2753
+ ypos -1032
+}
+Switch {
+ inputs 12
+ which {{frame-1}}
+ name Switch3
+ xpos 3416
+ ypos -722
+}
+Shuffle {
+ alpha white
+ name Shuffle_add_alpha
+ xpos 3416
+ ypos -678
+}
+Dot {
+ name Dot16
+ label "Add Alpha"
+ note_font_size 20
+ note_font_color 0x9fffff
+ xpos 3450
+ ypos -652
+}
+Reformat {
+ type "to box"
+ format "1944 2592 0 0 1944 2592 1 "
+ box_width 2916
+ box_height 3888
+ box_fixed true
+ resize none
+ black_outside true
+ name Reformat3
+ xpos 3416
+ ypos -608
+}
+LensDistortion {
+ serializeKnob ""
+ serialiseKnob "22 serialization::archive 9 0 0 0 0 0 0 0 0 0 0 0 0"
+ distortion1 {{LensDistortion2.aaa}}
+ distortion2 {{LensDistortion2.bbb}}
+ distortionCenter {0.0224714186 0.00639575161}
+ anamorphicSqueeze 0.8916549087
+ asymmetricDistortion {-0.04447494447 0.03559115902}
+ invertDistortion true
+ "Card Parameters" 1
+ cardScale {2.15627861 2.15627861 1}
+ a -0.06336053461
+ b -0.09266617149
+ c -0.0562861599
+ gridType "Thin Line"
+ alignmentCorrection {0.8936942816 -0.1231641993 -9.785914881e-05 0.01840004511 1.082217336 3.041511445e-05 10.8345499 12.00752354 1}
+ name LensDistortion2
+ xpos 3416
+ ypos -582
+ addUserKnob {20 User}
+ addUserKnob {7 bbb t "\t" R -1 1}
+ bbb 0.24
+ addUserKnob {7 aaa R -1 1}
+ aaa -0.46
+}
+Reformat {
+ type "to box"
+ box_width 4860
+ box_height 6480
+ box_fixed true
+ black_outside true
+ name Reformat4
+ xpos 3416
+ ypos -527
+}
+Transform {
+ scale 0.8
+ center {2430 3240}
+ name Transform1
+ xpos 3416
+ ypos -501
+}
+LensDistortion {
+ serializeKnob ""
+ serialiseKnob "22 serialization::archive 9 0 0 0 0 0 0 0 0 0 0 0 0"
+ distortion1 {{LensDistortion3.aaa}}
+ distortion2 {{LensDistortion3.bbb}}
+ distortionCenter {0.0224714186 0.00639575161}
+ anamorphicSqueeze 0.8916549087
+ asymmetricDistortion {-0.04447494447 0.03559115902}
+ invertDistortion true
+ "Card Parameters" 1
+ cardScale {2.15627861 2.15627861 1}
+ a -0.06336053461
+ b -0.09266617149
+ c -0.0562861599
+ gridType "Thin Line"
+ alignmentCorrection {0.8936942816 -0.1231641993 -9.785914881e-05 0.01840004511 1.082217336 3.041511445e-05 10.8345499 12.00752354 1}
+ name LensDistortion3
+ xpos 3416
+ ypos -475
+ addUserKnob {20 User}
+ addUserKnob {7 bbb t "\t" R -1 1}
+ bbb 0.295
+ addUserKnob {7 aaa R -1 1}
+ aaa -0.625
+}
+RotoPaint {
+ output none
+ premultiply rgba
+ curves {{{v x3f99999a}
+  {f 0}
+  {n
+   {layer Root
+    {f 2097152}
+    {t x44800000 x44428000}
+    {a pt1x 0 pt1y 0 pt2x 0 pt2y 0 pt3x 0 pt3y 0 pt4x 0 pt4y 0 ptex00 0 ptex01 0 ptex02 0 ptex03 0 ptex10 0 ptex11 0 ptex12 0 ptex13 0 ptex20 0 ptex21 0 ptex22 0 ptex23 0 ptex30 0 ptex31 0 ptex32 0 ptex33 0 ptof1x 0 ptof1y 0 ptof2x 0 ptof2y 0 ptof3x 0 ptof3y 0 ptof4x 0 ptof4y 0 pterr 0 ptrefset 0 ptmot x40800000 ptref 0}
+    {curvegroup Bezier1 512 bezier
+     {{cc
+       {f 8192}
+       {p
+        {}
+        {x43750000 x45bec800}
+        {}
+        {xc41a0571 xbf38de96}
+        {x4515b000 x45b1d000}
+        {x441a0571 x3f38e5d1}
+        {}
+        {x458cf000 x45bef000}
+        {}
+        {xbff5cab4 x4437b660}
+        {x45723000 x454a8000}
+        {x3ff5ce56 xc437b660}
+        {}
+        {x458d6800 x43b90000}
+        {}
+        {x442dded1 x412899df}
+        {x451b0000 x44444000}
+        {xc42dded1 xc1289a4d}
+        {}
+        {x436b0000 x43988000}
+        {}
+        {xbf91411e xc4248974}
+        {x44629376 x4549e37b}
+        {x3f913ddc x44248974}}}
+      {cc
+       {f 8192}
+       {p
+        {}
+        {x4437c55a xc4251f68}
+        {}
+        {xc41a0571 xbf38de96}
+        {xc0e2b600 xc3df32c0}
+        {x441a0571 x3f38e5d1}
+        {}
+        {xc416c574 xc3f73540}
+        {}
+        {xbff5cab4 x4437b664}
+        {xc3df3290 xc18d8800}
+        {x3ff5ce56 xc437b664}
+        {}
+        {xc4118198 x4402f8eb}
+        {}
+        {x442dded1 x412899df}
+        {xc19a9000 x43d36a64}
+        {xc42dded1 xc1289a4d}
+        {}
+        {x43e7ae04 x43f70112}
+        {}
+        {xbf91411e xc4248974}
+        {x43e14c2c x41294800}
+        {x3f913ddc x44248974}}}}
+     {tx 1 x45158800 x4548dc00}
+     {a osw x41200000 osf 0 str 1 spx x44800000 spy x44428000 sb 1 tt x40800000}}}}}}
+ toolbox {selectAll {
+  { selectAll str 1 ssx 1 ssy 1 sf 1 }
+  { createBezier str 1 ssx 1 ssy 1 sf 1 sb 1 tt 4 }
+  { createBezierCusped str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createBSpline str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createEllipse str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createRectangle str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createRectangleCusped str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { curvePoints str 1 ssx 1 ssy 1 sf 1 }
+  { brush str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { eraser src 2 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { clone src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { reveal src 3 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { dodge src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { burn src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { blur src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { sharpen src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { smear src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+} }
+ toolbar_autokey false
+ toolbar_feather_link false
+ toolbar_brush_hardness 0.200000003
+ toolbar_source_transform_scale {1 1}
+ toolbar_source_transform_center {1024 778}
+ colorOverlay {0 0 0 0}
+ lifetime_type "all frames"
+ motionblur_shutter_offset_type centred
+ source_black_outside true
+ name RotoPaint1
+ xpos 3418
+ ypos -429
+}
+Write {
+ channels rgba
+ file /media/pa/ssd/proj/stich/IMG/wrap_cam_##.png
+ file_type png
+ checkHashOnRead false
+ version 6
+ name Write1
+ xpos 3416
+ ypos -321
+}
+NoOp {
+ inputs 0
+ name Root
+ tile_color 0xff
+ note_font_size 31
+ xpos 330
+ ypos 399
+ addUserKnob {20 Cam_pos l "Camera position"}
+ addUserKnob {6 grupa_a l "Grupa 1 3 5 7 9 11" +STARTLINE}
+ grupa_a true
+ addUserKnob {6 grupa_b l "Grupa 2 4 6 8 10 12" +STARTLINE}
+ addUserKnob {7 pos R 0 -15}
+ pos -12
+ addUserKnob {20 Cam_proj l "Camera Projection"}
+ addUserKnob {7 foc_len l "focal length" R 5 100}
+ foc_len 5
+ addUserKnob {7 hot_aper l "horiz aperture" R 0.1 50}
+ hot_aper 10.8
+ addUserKnob {7 ver_aper l "vert aperture" R 0.1 50}
+ ver_aper 5.8
+ addUserKnob {7 near R 0.1 10}
+ near 0.1
+ addUserKnob {7 far R 11 1000}
+ far 120
+}
+push $N66b0590
+Viewer {
+ frame 1
+ frame_range 1-12
+ fps 25
+ name Viewer1
+ xpos 1288
+ ypos 823
+}
